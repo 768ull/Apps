@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="tgca_bg">#0E0E13</color>
+    <color name="tgca_yellow">#FFD60A</color>
+    <color name="tgca_red">#D62828</color>
+    <color name="ic_launcher_background">#D62828</color>
+</resources>

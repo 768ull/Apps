@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.TGCA" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/tgca_bg</item>
+    </style>
+</resources>

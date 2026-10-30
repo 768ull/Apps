@@ -76,7 +76,6 @@ import com.tgca.collection.save.GameSave
 import kotlinx.coroutines.delay
 import kotlin.math.abs
 import kotlin.math.max
-import kotlin.math.min
 import kotlin.math.sin
 
 // ---------------------------------------------------------------------------
@@ -337,7 +336,7 @@ fun CobrinhaScreen(onExit: () -> Unit) {
                 .fillMaxWidth()
                 .padding(10.dp)
         ) {
-            val boardDp = min(maxWidth, maxHeight)
+            val boardDp = maxWidth.coerceAtMost(maxHeight)
             Box(Modifier.size(boardDp), contentAlignment = Alignment.Center) {
                 Canvas(
                     Modifier
@@ -628,3 +627,4 @@ private fun DrawScope.drawBoard(game: CobrinhaGame, t: SnakeTheme) {
         }
     }
 }
+

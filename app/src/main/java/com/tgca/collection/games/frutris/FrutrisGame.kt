@@ -457,7 +457,7 @@ class FrutrisGame(
 
         // grade completa = linhas ocultas + visíveis
         val rows = Array(HIDDEN + ROWS) { r ->
-            if (r < HIDDEN) hidden[r].copy() else board[r - HIDDEN].copy()
+            if (r < HIDDEN) hidden[r].copyOf() else board[r - HIDDEN].copyOf()
         }
         for (mr in matrix.indices) {
             for (mc in matrix[mr].indices) {
@@ -504,13 +504,13 @@ class FrutrisGame(
             }
         }
 
-        hidden = Array(HIDDEN) { finalRows[it].copy() }
-        board = Array(ROWS) { finalRows[HIDDEN + it].copy() }
+        hidden = Array(HIDDEN) { finalRows[it].copyOf() }
+        board = Array(ROWS) { finalRows[HIDDEN + it].copyOf() }
         pendingGarbage.clear()
 
         if (lines > 0) {
             full.forEach { y ->
-                if (y >= HIDDEN) clearing.add(Clearing(y - HIDDEN, rows[y].copy(), clock))
+                if (y >= HIDDEN) clearing.add(Clearing(y - HIDDEN, rows[y].copyOf(), clock))
             }
             combo++
             var base = LINE_SCORES[lines.coerceAtMost(4)]
@@ -661,3 +661,4 @@ class FrutrisGame(
         }
     }
 }
+
